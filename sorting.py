@@ -25,6 +25,7 @@ def read_data(file_name):
 
 
 def selection_sort(number_array, direction="ascending"):
+
     n = len(number_array)
     for i in range(n):
         min_max_idx = 1
@@ -41,11 +42,32 @@ def selection_sort(number_array, direction="ascending"):
     return number_array
 
 
+def buble_sort(number_array):
+    """
+    :param str number_array: list with numeric array
+    :return: sorted numeric array
+    """
+
+    n = len(number_array)
+
+    for i in range(n - 1):
+        for num_idx in range(n - i - 1):
+            if number_array[num_idx] > number_array[num_idx + 1]:
+                number_array[num_idx], number_array[num_idx + 1] = number_array[num_idx], number_array[num_idx + 1]
+    return number_array
+
+
+
+
+
+
+
 
 def main():
     data = read_data("numbers.csv")
     print(data)
     print(selection_sort(data["series_1"]))
+    print(buble_sort(data["series_2"]))
     pass
 
 
